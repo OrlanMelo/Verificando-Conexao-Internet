@@ -29,7 +29,7 @@ public:
 
 		InicializarInstancia();
 
-		HRESULT Result;//Caso seja necessário verificar status de tarefa de API.
+		HRESULT Result;//Caso seja necessÃ¡rio verificar status de tarefa de API.
 
 		VARIANT_BOOL Valor = 0;
 		Result = NetListMgr->get_IsConnectedToInternet((VARIANT_BOOL*)&Valor);
@@ -38,12 +38,14 @@ public:
 		{
 			BOOL Res = InternetCheckConnection(L"https://google.com", FLAG_ICC_FORCE_CONNECTION, 0);
 			if (Res == TRUE)
-				cout << "Você está conectado a internet.";
+				cout << "VocÃª estÃ¡ conectado a internet.";
 			else
-				cout << "Não foi possível estabelecer uma conexão com a internet.";
+				cout << "NÃ£o foi possÃ­vel estabelecer uma conexÃ£o com a internet.";
 		}
 		else
-			cout << "Você não está conectado a internet.";
+		{
+			cout << "VocÃª nÃ£o estÃ¡ conectado a internet.";
+		}
 
 		CoUninitialize();
 
@@ -54,7 +56,7 @@ public:
 
 int main()
 {
-	cout << "O assistente está verificando se há conexão com a internet...";
+	cout << "O assistente estÃ¡ verificando se hÃ¡ conexÃ£o com a internet...";
 
 	Funcoes.VerificarConexaoComInternet();
 
